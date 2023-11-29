@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace abraham_luzon_group6_assignment.Services
 {
-    public class CarRentalRepository
+    public class CarRentalRepository : ICarRentalRepository
     {
         private CarRentalDBContext dBContext;
 
@@ -71,11 +71,19 @@ namespace abraham_luzon_group6_assignment.Services
                 await dBContext.SaveChangesAsync();
             }
         }
+        public async Task AddCar(Car car)
+        {
+            if (!await CarExistsAsync(car.Carrentalid))
+            {
+                dBContext.Cars.Add(car);
+                await dBContext.SaveChangesAsync();
+            }
+        }
         public void DeleteCarRental(Carrental carrental)
         {
-            
-                dBContext.Carrentals.Remove(carrental);
-            
+
+            dBContext.Carrentals.Remove(carrental);
+
         }
         public async Task<bool> SaveAsync()
         {

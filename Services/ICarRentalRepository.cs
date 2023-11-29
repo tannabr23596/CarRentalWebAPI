@@ -4,7 +4,7 @@ namespace abraham_luzon_group6_assignment.Services
 {
     public interface ICarRentalRepository
     {
-        IEnumerable<Carrental> GetCarByCarRentalCompany(string carrentalid);
+        IEnumerable<Car> GetCarByCarRentalCompany(string carrentalid);
         IEnumerable<Car> GetCars();
         Task<bool> CarRentalCompanyExistAsync(string carrentalid);
         Task AddCarRentalCompany(Carrental carrental);
