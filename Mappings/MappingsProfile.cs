@@ -12,6 +12,8 @@ namespace abraham_luzon_group6_assignment.Mappings
             CreateMap<CarRentalDto, Carrental>();
             CreateMap<CarDto, Car>();
             CreateMap<Car, CarDto>();
+            CreateMap<BookingDto, Booking>();
+            CreateMap<Booking, BookingDto>();
 
 
         }

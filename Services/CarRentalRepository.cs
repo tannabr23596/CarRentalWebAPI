@@ -18,6 +18,13 @@ namespace abraham_luzon_group6_assignment.Services
         {
             return await dBContext.Carrentals.AnyAsync<Carrental>(i => i.Carrentalid.Equals(carrentalid));
         }
+
+        public async Task<bool> BookingExistsAsync(int bookingid)
+        {
+            return await dBContext.Bookings.AnyAsync<Booking>(i => i.Bookingid == bookingid);
+        }
+
+
         public async Task<bool> CarExistsAsync(string carid)
         {
             return await dBContext.Cars.AnyAsync<Car>(i => i.Carid.Equals(carid));
@@ -51,6 +58,13 @@ namespace abraham_luzon_group6_assignment.Services
             return allCars;
         }
 
+        public IEnumerable<Booking> GetBookings()
+        {
+            IEnumerable<Booking> allBookings = dBContext.Bookings.ToList();
+            return allBookings;
+        }
+
+
         public IEnumerable<Carrental> GetCarRentalCompanies()
         {
             IEnumerable<Carrental> carrentals = dBContext.Carrentals;
@@ -62,7 +76,19 @@ namespace abraham_luzon_group6_assignment.Services
             IEnumerable<Carrental> carrentals = dBContext.Carrentals.Where(c => c.Carrentalid.Equals(id));
             return carrentals.FirstOrDefault();
         }
-
+        public async Task<Booking> GetBookingById(int id)
+        {
+            IEnumerable<Booking> booking = dBContext.Bookings.Where(c => c.Bookingid == id);
+            return booking.FirstOrDefault();
+        }
+        public async Task AddBooking(Booking booking)
+        {
+            if (!await BookingExistsAsync(booking.Bookingid))
+            {
+                dBContext.Bookings.Add(booking);
+                await dBContext.SaveChangesAsync();
+            }
+        }
         public async Task AddCarRental(Carrental carrental)
         {
             if (!await CarRentalCompanyExistAsync(carrental.Carrentalcompanyname))
@@ -83,6 +109,12 @@ namespace abraham_luzon_group6_assignment.Services
         {
 
             dBContext.Carrentals.Remove(carrental);
+
+        }
+        public void DeleteBooking(Booking booking)
+        {
+
+            dBContext.Bookings.Remove(booking);
 
         }
         public async Task<bool> SaveAsync()
