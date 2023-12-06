@@ -72,3 +72,7 @@ D:\devops_1\abraham_luzon_group6_assignment\obj\Debug\net6.0\refint\abraham_luzo
 D:\devops_1\abraham_luzon_group6_assignment\obj\Debug\net6.0\abraham_luzon_group6_assignment.pdb
 D:\devops_1\abraham_luzon_group6_assignment\obj\Debug\net6.0\abraham_luzon_group6_assignment.genruntimeconfig.cache
 D:\devops_1\abraham_luzon_group6_assignment\obj\Debug\net6.0\ref\abraham_luzon_group6_assignment.dll
+D:\devops_1\abraham_luzon_group6_assignment\bin\Debug\net6.0\CarRentalLibrary\bin\Debug\net6.0\CarRentalLibrary.deps.json
+D:\devops_1\abraham_luzon_group6_assignment\bin\Debug\net6.0\CarRentalLibrary\bin\Debug\net6.0\CarRentalLibrary.runtimeconfig.json
+D:\devops_1\abraham_luzon_group6_assignment\bin\Debug\net6.0\CarRentalLibrary\obj\CarRentalLibrary.csproj.nuget.dgspec.json
+D:\devops_1\abraham_luzon_group6_assignment\bin\Debug\net6.0\CarRentalLibrary\obj\project.assets.json

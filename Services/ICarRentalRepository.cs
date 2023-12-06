@@ -11,8 +11,6 @@ namespace abraham_luzon_group6_assignment.Services
         Task AddCarRentalCompany(Carrental carrental);
         Task<Car> GetCarById(string id);
         void DeleteCarRental (Carrental carrental);
-
-        //Ingredient Related queries
         IEnumerable<Carrental> GetCarRentalCompanies();
         Task<Carrental> GetCarRentalById(string id);
 

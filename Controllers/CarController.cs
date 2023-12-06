@@ -31,6 +31,13 @@ namespace abraham_luzon_group6_assignment.Controllers
             var results = mapper.Map<IEnumerable<CarDto>>(cars);
             return Ok(results);
         }
+        [HttpGet("{carid}")]
+        public IActionResult GetCarById(string carid)
+        {
+            var car = carRentalRepository.GetCarById(carid);
+            var results = mapper.Map<CarDto>(car.Result);
+            return Ok(results);
+        }
 
 
 
@@ -47,7 +54,6 @@ namespace abraham_luzon_group6_assignment.Controllers
             {
                 return BadRequest();
             }
-
             var car = mapper.Map<Car>(carDto);
             await carRentalRepository.AddCar(car);
             var viewCar = mapper.Map<CarDto>(car);
@@ -87,8 +93,8 @@ namespace abraham_luzon_group6_assignment.Controllers
             return NoContent();
         }
 
-        // DELETE api/<IngredientController>  
-        //delete ingredient
+        // DELETE api/<>  
+        //delete 
         [HttpDelete("{carid}")]
         public async Task<ActionResult> DeleteCar(string carid)
         {
@@ -112,8 +118,8 @@ namespace abraham_luzon_group6_assignment.Controllers
 
         }
 
-        // PATCH api/<IngredientController>  
-        //Paritally update Ingredient
+        // PATCH api/<>  
+        //Paritally update 
         [HttpPatch("{carid}")]
         public async Task<ActionResult> ParitiallyUpdateCar(string carid, JsonPatchDocument<CarDto> patchDocument)
         {
@@ -129,7 +135,7 @@ namespace abraham_luzon_group6_assignment.Controllers
             }
 
             var carDto = mapper.Map<CarDto>(car);
-            patchDocument.ApplyTo(carDto, (Microsoft.AspNetCore.JsonPatch.Adapters.IObjectAdapter)ModelState);
+            patchDocument.ApplyTo(carDto);
 
             if (!ModelState.IsValid)
             {

@@ -55,7 +55,13 @@ namespace abraham_luzon_group6_assignment.Controllers
             var viewBooking = mapper.Map<BookingDto>(booking);
             return Created("Booking Added!", viewBooking);
         }
-
+        [HttpGet("{bookingid}")]
+        public IActionResult GetBookingById(int bookingid)
+        {
+            var booking = carRentalRepository.GetBookingById(bookingid);
+            var results = mapper.Map<BookingDto>(booking.Result);
+            return Ok(results);
+        }
         // PUT api/<CarRentalController>  
         //update car rental company
         [HttpPut("{bookingid}")]
@@ -89,8 +95,8 @@ namespace abraham_luzon_group6_assignment.Controllers
             return NoContent();
         }
 
-        // DELETE api/<IngredientController>  
-        //delete ingredient
+        // DELETE api/<>  
+        //delete 
         [HttpDelete("{bookingid}")]
         public async Task<ActionResult> DeleteBooking(int bookingid)
         {
@@ -114,8 +120,8 @@ namespace abraham_luzon_group6_assignment.Controllers
 
         }
 
-        // PATCH api/<IngredientController>  
-        //Paritally update Ingredient
+        // PATCH api/<>  
+        //Paritally update 
         [HttpPatch("{bookingid}")]
         public async Task<ActionResult> ParitiallyUpdateBooking(int bookingid, JsonPatchDocument<BookingDto> patchDocument)
         {

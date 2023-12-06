@@ -53,6 +53,13 @@ namespace abraham_luzon_group6_assignment.Controllers
             var viewCarRental = mapper.Map<CarRentalDto>(company);
             return Created("Car Rental Company Added!", viewCarRental);
         }
+        [HttpGet("{carrentalid}")]
+        public IActionResult GetCarRentalById(string carrentalid)
+        {
+            var carrental = carRentalRepository.GetCarRentalById(carrentalid);
+            var results = mapper.Map<CarRentalDto>(carrental.Result);
+            return Ok(results);
+        }
 
         // PUT api/<CarRentalController>  
         //update car rental company
@@ -87,8 +94,8 @@ namespace abraham_luzon_group6_assignment.Controllers
             return NoContent();
         }
 
-        // DELETE api/<IngredientController>  
-        //delete ingredient
+        // DELETE api/<>  
+        //delete 
         [HttpDelete("{carrentalid}")]
         public async Task<ActionResult> DeleteCarRentalCompany(string carrentalid)
         {
@@ -112,8 +119,8 @@ namespace abraham_luzon_group6_assignment.Controllers
 
         }
 
-        // PATCH api/<IngredientController>  
-        //Paritally update Ingredient
+        // PATCH api/<>  
+        //Paritally update 
         [HttpPatch("{carrentalid}")]
         public async Task<ActionResult> ParitiallyUpdateCarRentalCompany(string carrentalid, JsonPatchDocument<CarRentalDto> patchDocument)
         {

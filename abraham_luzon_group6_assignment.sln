@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "abraham_luzon_group6_assignment", "abraham_luzon_group6_assignment.csproj", "{8F8209CB-FE18-4AEC-AC79-AF2CFE6314A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "abraham_luzon_group6_assignment", "abraham_luzon_group6_assignment.csproj", "{8F8209CB-FE18-4AEC-AC79-AF2CFE6314A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalLibrary", "..\CarRentalLibrary\CarRentalLibrary.csproj", "{B197B2FC-64AB-4057-88A1-B8BDE1E62A93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8F8209CB-FE18-4AEC-AC79-AF2CFE6314A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F8209CB-FE18-4AEC-AC79-AF2CFE6314A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F8209CB-FE18-4AEC-AC79-AF2CFE6314A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B197B2FC-64AB-4057-88A1-B8BDE1E62A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B197B2FC-64AB-4057-88A1-B8BDE1E62A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B197B2FC-64AB-4057-88A1-B8BDE1E62A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B197B2FC-64AB-4057-88A1-B8BDE1E62A93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

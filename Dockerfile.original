@@ -11,6 +11,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["abraham_luzon_group6_assignment.csproj", "."]
+COPY ["CarRentalLibrary/CarRentalLibrary.csproj", "CarRentalLibrary/"]
 RUN dotnet restore "./abraham_luzon_group6_assignment.csproj"
 COPY . .
 WORKDIR "/src/."
